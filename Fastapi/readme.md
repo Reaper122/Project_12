@@ -1,33 +1,50 @@
-API Endpoints
-Download Video
-Endpoint: /url
-Method: POST
-Description: Downloads a YouTube video and saves it locally.
-Request Parameter:
-url_P (str): The URL of the YouTube video.
-Response: {"message": "Video downloaded successfully"}
-Transcribe Video
-Endpoint: /get_transcriped
-Method: GET
-Description: Transcribes the downloaded video.
-Response: {"message": "Transcribe successfully"}
-Summarize Transcript
-Endpoint: /get_summarized
-Method: GET
-Description: Summarizes the transcript of the video.
-Response: {"message": "Summarized successfully"}
-Generate Notes
-Endpoint: /get_notes
-Method: GET
-Description: Generates notes from the transcript.
-Response: {"message": "Generated Note"}
-Generate MCQs
-Endpoint: /get_mcq
-Method: GET
-Description: Generates MCQs from the transcript.
-Response: {"message": "Generated Mcq successfully"}
-Delete Folders
-Endpoint: /delete_folder
-Method: GET
-Description: Deletes the download, transcript, notes, and MCQ files.
-Response: {"message": "Deleted successfully"}
+# Video Processing API
+
+This FastAPI application provides endpoints for video processing tasks, including downloading videos from YouTube, transcribing videos, summarizing transcripts, generating notes, and creating multiple-choice questions (MCQs).
+
+## Endpoints
+
+1. **Download Video from YouTube**
+   - **Endpoint**: `POST /url`
+   - **Parameters**: `url_P` (string) - YouTube video URL
+   - **Description**: Downloads the video and audio from the provided YouTube URL.
+
+2. **Transcribe Video**
+   - **Endpoint**: `GET /get_transcriped`
+   - **Description**: Transcribes the downloaded video into text chunks.
+
+3. **Summarize Transcripts**
+   - **Endpoint**: `GET /get_summarized`
+   - **Description**: Generates a summary of the transcribed text.
+
+4. **Generate Notes**
+   - **Endpoint**: `GET /get_notes`
+   - **Description**: Creates notes from the transcribed text.
+
+5. **Generate MCQs**
+   - **Endpoint**: `GET /get_mcq`
+   - **Description**: Generates multiple-choice questions based on the transcribed content.
+
+6. **Delete Folders**
+   - **Endpoint**: `GET /delete_folder`
+   - **Description**: Deletes temporary folders used for processing.
+
+## Usage
+1. Start the FastAPI server.
+2. Use the provided endpoints to perform video processing tasks.
+
+## CORS Configuration
+- The application allows requests from `http://localhost:3000` and all origins (`*`).
+
+## Dependencies
+- Requires the following components:
+  - `YouTubeDownloader` for video download
+  - `VideoTranscriber` for transcription
+  - `TextSummarizer` for summarization
+  - `NoteGenerator` for note generation
+  - `MCQGenerator` for MCQ creation
+
+## Cleanup
+- Use the `/delete_folder` endpoint to remove temporary files and folders.
+
+Feel free to customize this `readme.md` file according to your project's needs!
