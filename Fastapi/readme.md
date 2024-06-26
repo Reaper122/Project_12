@@ -46,5 +46,3 @@ This FastAPI application provides endpoints for video processing tasks, includin
 
 ## Cleanup
 - Use the `/delete_folder` endpoint to remove temporary files and folders.
-
-Feel free to customize this `readme.md` file according to your project's needs!
