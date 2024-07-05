@@ -1,0 +1,24 @@
+services:
+  frontend:
+    build: ./
+    container_name: vite_container
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - ./:/app
+    depends_on:
+      - backend_service
+
+  backend_service:
+    build: ./server
+    container_name: fastapi_container
+    expose:
+      - 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - /app/__pycache__
+      - ./server:/app
