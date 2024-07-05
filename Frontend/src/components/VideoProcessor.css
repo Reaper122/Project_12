@@ -1,0 +1,105 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px; /* Increased max width */
+    margin: 0 auto;
+    padding: 40px; /* Increased padding */
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Lighter grey background */
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+    .title {
+    text-align: center;
+    margin-bottom: 40px; /* Increased margin */
+    font-size: 36px; /* Increased font size */
+    color: #333; /* Darker grey color */
+    font-weight: bold;
+    }
+    
+    .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px; /* Increased margin */
+    }
+    
+    .input {
+    width: 80%; /* Increased width */
+    padding: 20px; /* Increased padding */
+    font-size: 20px; /* Increased font size */
+    margin-bottom: 20px; /* Increased margin */
+    border: 1px solid #aaa; /* Add a gray border around the input field */
+    border-radius: 8px; /* Increased border radius */
+    background-color: #fff; /* White background for input */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333; /* Add this line to set the text color */
+    }
+    
+    .button {
+    padding: 15px 30px; /* Increased padding */
+    font-size: 20px; /* Increased font size */
+    background-color: #0099ff; /* Brighter blue button */
+    color: #fff;
+    border: none;
+    border-radius: 8px; /* Increased border radius */
+    cursor: pointer;
+    }
+    
+    .button:hover {
+    background-color: #0077cc; /* Darker blue on hover */
+    }
+    
+    .error {
+    color: #ff0000; /* Brighter red color */
+    text-align: center;
+    font-size: 18px; /* Increased font size */
+    margin-bottom: 20px; /* Increased margin */
+    }
+    
+    .output-container {
+    margin-top: 40px; /* Increased margin */
+    background-color: #f9f9f9; /* Lighter grey background */
+    padding: 30px; /* Increased padding */
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .filename {
+    font-weight: bold;
+    font-size: 24px; /* Increased font size */
+    color: #333; /* Darker grey color */
+    margin-bottom: 15px; /* Increased margin */
+    }
+    
+    .file-content {
+    margin-bottom: 30px; /* Increased margin */
+    }
+    
+    .file-content h3 {
+    margin-bottom: 20px; /* Increased margin */
+    font-size: 20px; /* Increased font size */
+    color: #555; /* Medium grey color */
+    }
+    
+    .preformatted {
+    white-space: pre-wrap; /* Allows long text to wrap to the next line */
+    background-color: #f9f9f9; /* Lighter grey background for preformatted text */
+    padding: 20px; /* Increased padding */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Increased border radius */
+    overflow-x: auto;
+    max-height: 500px; /* Increased max height */
+    overflow-y: auto; /* Adds vertical scroll if content exceeds max height */
+    color: #333; /* Darker grey text color */
+    font-size: 18px; /* Increased font size */
+    }
+    
+    h2 {
+    font-size: 24px; /* Increased font size for h2 */
+    color: #333; /* Darker grey color */
+    margin-bottom: 20px; /* Increased margin */
+    }
