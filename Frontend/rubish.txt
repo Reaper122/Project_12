@@ -1,3 +1,0 @@
-npm run dev -- --port=3000
-
-uvicorn main:app --reload
