@@ -5,9 +5,6 @@ WORKDIR /usr/app
 COPY package.json .
 
 RUN npm install
-RUN npm install --save-dev axios
-RUN npm install --global vite
-RUN npm install --save-dev vite
 
 COPY . .
 
