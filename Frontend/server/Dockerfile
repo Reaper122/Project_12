@@ -1,12 +1,10 @@
-FROM python:3.10
+FROM python:3.10-slim
 
 WORKDIR /usr/app
 
 COPY . /usr/app/
 
-RUN pip install fastapi uvicorn
-
-RUN pip install -r /usr/app/requirements.txt
+RUN pip install fastapi uvicorn -r /usr/app/requirements.txt
 
 EXPOSE 8000
 

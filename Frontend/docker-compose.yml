@@ -20,5 +20,5 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - /app/__pycache__
-      - ./server:/app
+      - /usr/app/__pycache__
+      - ./server:/usr/app
