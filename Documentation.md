@@ -28,6 +28,8 @@ The backend handles video processing and provides RESTful API endpoints to inter
   - `Note_Generator2/note_gen.py`: Note generator.
   - `Mcq_Generator2/mcq_gen.py`: MCQ generator.
 
+![alt text](image-9.png)
+
 ### Frontend (`frontend/`)
 
 The frontend is a React application that allows users to input a YouTube URL and view the processed files.
@@ -35,6 +37,8 @@ The frontend is a React application that allows users to input a YouTube URL and
 - **src/VideoProcessor.tsx**: React component for video processing.
 - **Dockerfile**: Docker configuration for the React frontend.
 - **package.json**: Node.js dependencies for the frontend.
+
+![alt text](image.png)
 
 ### Docker Configuration
 
@@ -60,6 +64,8 @@ The system follows a microservices architecture, with distinct components for ea
 2. **Trigger Processing**: The URL is sent to the backend via a POST request.
 3. **Display Results**: The frontend fetches and displays the processed files (transcript, summary, notes, and MCQs).
 
+![alt text](image-1.png)
+
 ## Detailed Explanation of Components
 
 ### YouTubeDownloader
@@ -84,6 +90,8 @@ class YouTubeDownloader:
         video_path = video_stream.download(output_path=self.download_path)
         return video_path
 ```
+
+![alt text](image-2.png)
 
 The `YouTubeDownloader` class allows users to fetch video details, download videos from YouTube, and
 convert the downloaded video's audio to MP3 format.
@@ -114,6 +122,8 @@ class VideoTranscriber:
         return text
 ```
 
+![alt text](image-3.png)
+
 The `VideoTranscriber` class provides methods to extract audio from a video, transcribe the audio
 using Google Speech Recognition, save the transcription as text and CSV files, split the audio into
 chunks, and transcribe the video in chunks for better accuracy.
@@ -134,6 +144,8 @@ class TextSummarizer:
         return summary[0]['summary_text']
 ```
 
+![alt text](image-4.png)
+
 The TextSummarizer class in Python uses the transformers library to summarize text files and save
 the summaries as both text and CSV files.
 
@@ -152,6 +164,8 @@ class NoteGenerator:
         notes = self.summarizer(text, max_length=self.note_length, min_length=int(self.note_length / 2), do_sample=False)
         return notes[0]['summary_text']
 ```
+
+![alt text](image-5.png)
 
 The `NoteGenerator` class in Python uses the Hugging Face Transformers library to generate
 summarized notes from a text file, splitting the text into chunks and saving the notes in both text
@@ -193,6 +207,8 @@ class MCQGenerator:
                     random.shuffle(options)
                     self.mcqs.append([question_text] + options + [correct_answer])
 ```
+
+![alt text](image-6.png)
 
 The `MCQGenerator` class reads text from a file, generates multiple-choice questions (MCQs) based on
 nouns in the text, finds synonyms for the correct answers, and saves the generated MCQs to both a
@@ -273,6 +289,8 @@ EXPOSE 8000
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 ```
 
+![alt text](image-7.png)
+
 The above code is a Dockerfile that sets up a Python environment for running a FastAPI application.
 
 #### Frontend Dockerfile
@@ -292,6 +310,8 @@ EXPOSE 3000
 
 CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "3000"]
 ```
+
+![alt text](image-8.png)
 
 The above code is a Dockerfile used to build a Node.js application container.
 
