@@ -608,3 +608,7 @@ Add user authentication and authorization to restrict access to the application 
 Improve the frontend UI/UX with better design, interactive elements, and real-time updates to enhance the user experience.
 
 By implementing these improvements, the Video Processing Application can become a more robust, versatile, and user-friendly tool, catering to a wider audience and providing more valuable insights from video content.
+
+# Credits
+
+This project was developed by **Prashant Bara**, under the guidance of **Akshit**, **Anand**, and **Shivlok Sir**.
